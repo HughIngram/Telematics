@@ -122,6 +122,15 @@
             this.checkBoxLed2 = new System.Windows.Forms.CheckBox();
             this.checkBoxLed1 = new System.Windows.Forms.CheckBox();
             this.checkBoxLed0 = new System.Windows.Forms.CheckBox();
+            this.groupBox16 = new System.Windows.Forms.GroupBox();
+            this.groupBox18 = new System.Windows.Forms.GroupBox();
+            this.textBoxSwitch0 = new System.Windows.Forms.TextBox();
+            this.groupBox19 = new System.Windows.Forms.GroupBox();
+            this.textBoxSwitch1 = new System.Windows.Forms.TextBox();
+            this.groupBox20 = new System.Windows.Forms.GroupBox();
+            this.textBoxSwitch2 = new System.Windows.Forms.TextBox();
+            this.groupBox21 = new System.Windows.Forms.GroupBox();
+            this.textBoxSwitch3 = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.tempTab.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -146,6 +155,11 @@
             this.groupBox8.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBox16.SuspendLayout();
+            this.groupBox18.SuspendLayout();
+            this.groupBox19.SuspendLayout();
+            this.groupBox20.SuspendLayout();
+            this.groupBox21.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -265,7 +279,6 @@
             this.disconnectToolStripMenuItem.Name = "disconnectToolStripMenuItem";
             this.disconnectToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.disconnectToolStripMenuItem.Text = "Disconnect";
-            this.disconnectToolStripMenuItem.Click += new System.EventHandler(this.disconnectToolStripMenuItem_Click);
             // 
             // tempTab
             // 
@@ -282,7 +295,6 @@
             this.tempTab.TabIndex = 2;
             this.tempTab.Text = "Temp Control";
             this.tempTab.UseVisualStyleBackColor = true;
-            this.tempTab.Click += new System.EventHandler(this.tempTab_Click);
             // 
             // manualRadioButton
             // 
@@ -317,7 +329,6 @@
             this.label9.Size = new System.Drawing.Size(17, 13);
             this.label9.TabIndex = 23;
             this.label9.Text = "°c";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label8
             // 
@@ -335,7 +346,6 @@
             this.textBoxTempSetPoint.Name = "textBoxTempSetPoint";
             this.textBoxTempSetPoint.Size = new System.Drawing.Size(51, 20);
             this.textBoxTempSetPoint.TabIndex = 21;
-            this.textBoxTempSetPoint.TextChanged += new System.EventHandler(this.textBoxTempSetPoint_TextChanged_1);
             // 
             // setPointRadioButton
             // 
@@ -362,7 +372,6 @@
             this.groupBox2.TabIndex = 25;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Manual control";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // radioButtonFanOff
             // 
@@ -433,7 +442,6 @@
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Status";
-            this.groupBox1.Enter += new System.EventHandler(this.tempInfoGroupBox_Enter);
             // 
             // label10
             // 
@@ -452,7 +460,6 @@
             this.textBoxFanStatus.ReadOnly = true;
             this.textBoxFanStatus.Size = new System.Drawing.Size(71, 20);
             this.textBoxFanStatus.TabIndex = 23;
-            this.textBoxFanStatus.TextChanged += new System.EventHandler(this.textBoxFanStatus_TextChanged);
             // 
             // label7
             // 
@@ -507,7 +514,6 @@
             this.label5.Size = new System.Drawing.Size(143, 13);
             this.label5.TabIndex = 21;
             this.label5.Text = "Temperature control method:";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // controlsTab
             // 
@@ -575,7 +581,6 @@
             this.textBoxReading.ReadOnly = true;
             this.textBoxReading.Size = new System.Drawing.Size(191, 20);
             this.textBoxReading.TabIndex = 4;
-            this.textBoxReading.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textBoxIncomingId
             // 
@@ -613,7 +618,6 @@
             this.label2.Size = new System.Drawing.Size(79, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Reading value:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // buttonIncomingIdAccept
             // 
@@ -738,6 +742,7 @@
             // 
             // miscTab
             // 
+            this.miscTab.Controls.Add(this.groupBox16);
             this.miscTab.Controls.Add(this.groupBox5);
             this.miscTab.Controls.Add(this.groupBox4);
             this.miscTab.Location = new System.Drawing.Point(4, 22);
@@ -746,7 +751,6 @@
             this.miscTab.TabIndex = 4;
             this.miscTab.Text = "Buttons and LEDs";
             this.miscTab.UseVisualStyleBackColor = true;
-            this.miscTab.Click += new System.EventHandler(this.miscTab_Click);
             // 
             // groupBox5
             // 
@@ -768,7 +772,6 @@
             this.groupBox5.TabIndex = 1;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Key Pad";
-            this.groupBox5.Enter += new System.EventHandler(this.groupBox5_Enter);
             // 
             // groupBox17
             // 
@@ -805,7 +808,6 @@
             this.textBoxKeypad9.Name = "textBoxKeypad9";
             this.textBoxKeypad9.Size = new System.Drawing.Size(37, 20);
             this.textBoxKeypad9.TabIndex = 8;
-            this.textBoxKeypad9.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // groupBoxKeypad0
             // 
@@ -842,7 +844,6 @@
             this.textBoxKeypad8.Name = "textBoxKeypad8";
             this.textBoxKeypad8.Size = new System.Drawing.Size(37, 20);
             this.textBoxKeypad8.TabIndex = 7;
-            this.textBoxKeypad8.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
             // 
             // groupBox15
             // 
@@ -951,7 +952,6 @@
             this.textBoxKeypad2.Name = "textBoxKeypad2";
             this.textBoxKeypad2.Size = new System.Drawing.Size(37, 20);
             this.textBoxKeypad2.TabIndex = 1;
-            this.textBoxKeypad2.TextChanged += new System.EventHandler(this.textBox2_TextChanged_1);
             // 
             // groupBox8
             // 
@@ -1092,6 +1092,91 @@
             this.checkBoxLed0.UseVisualStyleBackColor = true;
             this.checkBoxLed0.CheckedChanged += new System.EventHandler(this.checkBoxLed0_CheckedChanged);
             // 
+            // groupBox16
+            // 
+            this.groupBox16.Controls.Add(this.groupBox21);
+            this.groupBox16.Controls.Add(this.groupBox20);
+            this.groupBox16.Controls.Add(this.groupBox19);
+            this.groupBox16.Controls.Add(this.groupBox18);
+            this.groupBox16.Location = new System.Drawing.Point(35, 239);
+            this.groupBox16.Name = "groupBox16";
+            this.groupBox16.Size = new System.Drawing.Size(254, 100);
+            this.groupBox16.TabIndex = 2;
+            this.groupBox16.TabStop = false;
+            this.groupBox16.Text = "Switches";
+            // 
+            // groupBox18
+            // 
+            this.groupBox18.Controls.Add(this.textBoxSwitch0);
+            this.groupBox18.Location = new System.Drawing.Point(6, 19);
+            this.groupBox18.Name = "groupBox18";
+            this.groupBox18.Size = new System.Drawing.Size(55, 51);
+            this.groupBox18.TabIndex = 4;
+            this.groupBox18.TabStop = false;
+            this.groupBox18.Text = "0";
+            // 
+            // textBoxSwitch0
+            // 
+            this.textBoxSwitch0.Enabled = false;
+            this.textBoxSwitch0.Location = new System.Drawing.Point(6, 19);
+            this.textBoxSwitch0.Name = "textBoxSwitch0";
+            this.textBoxSwitch0.Size = new System.Drawing.Size(37, 20);
+            this.textBoxSwitch0.TabIndex = 10;
+            // 
+            // groupBox19
+            // 
+            this.groupBox19.Controls.Add(this.textBoxSwitch1);
+            this.groupBox19.Location = new System.Drawing.Point(67, 19);
+            this.groupBox19.Name = "groupBox19";
+            this.groupBox19.Size = new System.Drawing.Size(55, 51);
+            this.groupBox19.TabIndex = 5;
+            this.groupBox19.TabStop = false;
+            this.groupBox19.Text = "1";
+            // 
+            // textBoxSwitch1
+            // 
+            this.textBoxSwitch1.Enabled = false;
+            this.textBoxSwitch1.Location = new System.Drawing.Point(6, 19);
+            this.textBoxSwitch1.Name = "textBoxSwitch1";
+            this.textBoxSwitch1.Size = new System.Drawing.Size(37, 20);
+            this.textBoxSwitch1.TabIndex = 10;
+            // 
+            // groupBox20
+            // 
+            this.groupBox20.Controls.Add(this.textBoxSwitch2);
+            this.groupBox20.Location = new System.Drawing.Point(128, 19);
+            this.groupBox20.Name = "groupBox20";
+            this.groupBox20.Size = new System.Drawing.Size(55, 51);
+            this.groupBox20.TabIndex = 6;
+            this.groupBox20.TabStop = false;
+            this.groupBox20.Text = "2";
+            // 
+            // textBoxSwitch2
+            // 
+            this.textBoxSwitch2.Enabled = false;
+            this.textBoxSwitch2.Location = new System.Drawing.Point(6, 19);
+            this.textBoxSwitch2.Name = "textBoxSwitch2";
+            this.textBoxSwitch2.Size = new System.Drawing.Size(37, 20);
+            this.textBoxSwitch2.TabIndex = 10;
+            // 
+            // groupBox21
+            // 
+            this.groupBox21.Controls.Add(this.textBoxSwitch3);
+            this.groupBox21.Location = new System.Drawing.Point(189, 19);
+            this.groupBox21.Name = "groupBox21";
+            this.groupBox21.Size = new System.Drawing.Size(55, 51);
+            this.groupBox21.TabIndex = 7;
+            this.groupBox21.TabStop = false;
+            this.groupBox21.Text = "3";
+            // 
+            // textBoxSwitch3
+            // 
+            this.textBoxSwitch3.Enabled = false;
+            this.textBoxSwitch3.Location = new System.Drawing.Point(6, 19);
+            this.textBoxSwitch3.Name = "textBoxSwitch3";
+            this.textBoxSwitch3.Size = new System.Drawing.Size(37, 20);
+            this.textBoxSwitch3.TabIndex = 10;
+            // 
             // CTEC3426
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1147,6 +1232,15 @@
             this.groupBox6.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.groupBox16.ResumeLayout(false);
+            this.groupBox18.ResumeLayout(false);
+            this.groupBox18.PerformLayout();
+            this.groupBox19.ResumeLayout(false);
+            this.groupBox19.PerformLayout();
+            this.groupBox20.ResumeLayout(false);
+            this.groupBox20.PerformLayout();
+            this.groupBox21.ResumeLayout(false);
+            this.groupBox21.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1248,6 +1342,15 @@
         private System.Windows.Forms.GroupBox groupBox17;
         private System.Windows.Forms.GroupBox groupBoxKeypad0;
         private System.Windows.Forms.GroupBox groupBox15;
+        private System.Windows.Forms.GroupBox groupBox16;
+        private System.Windows.Forms.GroupBox groupBox21;
+        private System.Windows.Forms.TextBox textBoxSwitch3;
+        private System.Windows.Forms.GroupBox groupBox20;
+        private System.Windows.Forms.TextBox textBoxSwitch2;
+        private System.Windows.Forms.GroupBox groupBox19;
+        private System.Windows.Forms.TextBox textBoxSwitch1;
+        private System.Windows.Forms.GroupBox groupBox18;
+        private System.Windows.Forms.TextBox textBoxSwitch0;
     }
 }
 

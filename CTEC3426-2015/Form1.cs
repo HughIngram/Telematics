@@ -84,11 +84,6 @@ namespace CTEC3426_2015
             sendCommand(serialPort, "@");
         }
 
-        private void disconnectToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void portNameComboBox_TextChanged(object sender, EventArgs e)
         {
             _PortName = portNameComboBox.Text;
@@ -296,6 +291,17 @@ namespace CTEC3426_2015
             textBoxKeypad9.AppendText(getOnOrOff(remoteBoardState.keypad[9]));
             textBoxKeypadStar.AppendText(getOnOrOff(remoteBoardState.keypad[10]));
             textBoxKeypadHash.AppendText(getOnOrOff(remoteBoardState.keypad[11]));
+
+
+            // switches
+            textBoxSwitch0.Clear();
+            textBoxSwitch1.Clear();
+            textBoxSwitch2.Clear();
+            textBoxSwitch3.Clear();
+            textBoxSwitch0.AppendText(getOnOrOff(remoteBoardState.switches[0]));
+            textBoxSwitch1.AppendText(getOnOrOff(remoteBoardState.switches[1]));
+            textBoxSwitch2.AppendText(getOnOrOff(remoteBoardState.switches[2]));
+            textBoxSwitch3.AppendText(getOnOrOff(remoteBoardState.switches[3]));
         }
 
         private String getOnOrOff(Boolean b)
@@ -319,36 +325,14 @@ namespace CTEC3426_2015
             }
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
         private void buttonIncomingFilterAccept_Click(object sender, EventArgs e)
         {
             model.setUpIncomingFilter(textBoxIncomingId.Text);
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxTempDisplay_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
         private void buttonOutgoingIdAccept_Click(object sender, EventArgs e)
         {
             model.setUpBroadcastId(textBoxOutgoingId.Text);
-        }
-
-        private void textBoxHeaterStatus_TextChanged_1(object sender, EventArgs e)
-        {
-
         }
 
         private void radioButtonSetPoint_CheckedChanged(object sender, EventArgs e)
@@ -383,44 +367,9 @@ namespace CTEC3426_2015
             }
         }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tempInfoGroupBox_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxTempSetPoint_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonHeaterToggle_Click(object sender, EventArgs e)
         {
             model.toggleHeater();
-        }
-
-        private void textBoxFanStatus_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void tempTab_Click(object sender, EventArgs e)
-        {
         }
 
         private void radioButtonFanForward_CheckedChanged(object sender, EventArgs e)
@@ -484,41 +433,12 @@ namespace CTEC3426_2015
             model.sendSms(number, message);
         }
 
-        private void groupBox5_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label17_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonApplyMask_Click(object sender, EventArgs e)
         {
             String mask = textBoxMask.Text;
             model.setUpMask(mask);
         }
 
-        private void textBox2_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox8_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox7_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void miscTab_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 
 }

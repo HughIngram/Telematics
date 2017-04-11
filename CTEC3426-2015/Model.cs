@@ -8,6 +8,9 @@ namespace CTEC3426_2015
 {
     public class BoardState
     {
+        private static int N_LEDS = 4;
+        private static int N_KP_BUTTONS = 12;
+        private static int N_SWITCHES = 4;
         // default constructor
         public BoardState()
         { }
@@ -19,10 +22,9 @@ namespace CTEC3426_2015
             motorDirection = previousState.motorDirection;
             isHeaterOn = previousState.isHeaterOn;
             temparature = previousState.temparature;
-            for (int i = 0; i < 4; i++)
-            {
-                ledArray[i] = previousState.ledArray[i];
-            }
+            Array.Copy(previousState.ledArray, ledArray, N_LEDS);
+            Array.Copy(previousState.keypad, keypad, N_KP_BUTTONS);
+            Array.Copy(previousState.switches, switches, N_SWITCHES);
         }
 
         public enum MotorDirection
@@ -34,9 +36,10 @@ namespace CTEC3426_2015
         public MotorDirection motorDirection = MotorDirection.FORWARD;
         public Boolean isHeaterOn = false;
         public String temparature = "";
-        public Boolean[] ledArray = new Boolean[4];
+        public Boolean[] ledArray = new Boolean[N_LEDS];
         // order of items: 0123456789*#
-        public Boolean[] keypad = new Boolean[12];
+        public Boolean[] keypad = new Boolean[N_KP_BUTTONS];
+        public Boolean[] switches = new Boolean[N_SWITCHES];
     }
 
     /**
@@ -68,7 +71,7 @@ namespace CTEC3426_2015
             // we need the fourth bit of the zeroth byte
             byte byte0 = byte.Parse(data[0], System.Globalization.NumberStyles.HexNumber);
             int heaterBitNumber = 4;
-            remoteBoardState.isHeaterOn = (byte0 & (1 << heaterBitNumber)) != 0;  // can the 0 be replaced with 'false'?
+            remoteBoardState.isHeaterOn = (byte0 & (1 << heaterBitNumber)) != 0;
 
             // read the fan status
             // note that the fan status is stored differently for incoming / outgoing
@@ -107,6 +110,13 @@ namespace CTEC3426_2015
             remoteBoardState.keypad[10] = byte1 == 0x53;
             // # button
             remoteBoardState.keypad[11] = byte1 == 0x48;
+
+            // read the status of the switches
+            // bits 0->3 of byte 0
+            for (int switchNumber = 0; switchNumber < remoteBoardState.switches.Length; switchNumber++)
+            {
+                remoteBoardState.switches[switchNumber] = (byte0 & (1 << switchNumber)) != 0;
+            }
         }
 
         public void setUpMask(String mask)
