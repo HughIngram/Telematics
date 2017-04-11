@@ -87,6 +87,15 @@
             this.textboxSmsMessage = new System.Windows.Forms.TextBox();
             this.textboxSmsNumber = new System.Windows.Forms.TextBox();
             this.miscTab = new System.Windows.Forms.TabPage();
+            this.groupBox16 = new System.Windows.Forms.GroupBox();
+            this.groupBox21 = new System.Windows.Forms.GroupBox();
+            this.textBoxSwitch3 = new System.Windows.Forms.TextBox();
+            this.groupBox20 = new System.Windows.Forms.GroupBox();
+            this.textBoxSwitch2 = new System.Windows.Forms.TextBox();
+            this.groupBox19 = new System.Windows.Forms.GroupBox();
+            this.textBoxSwitch1 = new System.Windows.Forms.TextBox();
+            this.groupBox18 = new System.Windows.Forms.GroupBox();
+            this.textBoxSwitch0 = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox17 = new System.Windows.Forms.GroupBox();
             this.textBoxKeypadHash = new System.Windows.Forms.TextBox();
@@ -122,15 +131,6 @@
             this.checkBoxLed2 = new System.Windows.Forms.CheckBox();
             this.checkBoxLed1 = new System.Windows.Forms.CheckBox();
             this.checkBoxLed0 = new System.Windows.Forms.CheckBox();
-            this.groupBox16 = new System.Windows.Forms.GroupBox();
-            this.groupBox18 = new System.Windows.Forms.GroupBox();
-            this.textBoxSwitch0 = new System.Windows.Forms.TextBox();
-            this.groupBox19 = new System.Windows.Forms.GroupBox();
-            this.textBoxSwitch1 = new System.Windows.Forms.TextBox();
-            this.groupBox20 = new System.Windows.Forms.GroupBox();
-            this.textBoxSwitch2 = new System.Windows.Forms.TextBox();
-            this.groupBox21 = new System.Windows.Forms.GroupBox();
-            this.textBoxSwitch3 = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.tempTab.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -141,6 +141,11 @@
             this.tabControl.SuspendLayout();
             this.smsTab.SuspendLayout();
             this.miscTab.SuspendLayout();
+            this.groupBox16.SuspendLayout();
+            this.groupBox21.SuspendLayout();
+            this.groupBox20.SuspendLayout();
+            this.groupBox19.SuspendLayout();
+            this.groupBox18.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox17.SuspendLayout();
             this.groupBox14.SuspendLayout();
@@ -155,11 +160,6 @@
             this.groupBox8.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            this.groupBox16.SuspendLayout();
-            this.groupBox18.SuspendLayout();
-            this.groupBox19.SuspendLayout();
-            this.groupBox20.SuspendLayout();
-            this.groupBox21.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -391,9 +391,9 @@
             this.radioButtonFanBackward.AutoSize = true;
             this.radioButtonFanBackward.Location = new System.Drawing.Point(6, 97);
             this.radioButtonFanBackward.Name = "radioButtonFanBackward";
-            this.radioButtonFanBackward.Size = new System.Drawing.Size(78, 17);
+            this.radioButtonFanBackward.Size = new System.Drawing.Size(65, 17);
             this.radioButtonFanBackward.TabIndex = 20;
-            this.radioButtonFanBackward.Text = "Backwards";
+            this.radioButtonFanBackward.Text = "Reverse";
             this.radioButtonFanBackward.UseVisualStyleBackColor = true;
             this.radioButtonFanBackward.CheckedChanged += new System.EventHandler(this.radioButtonFanBackward_CheckedChanged);
             // 
@@ -752,6 +752,91 @@
             this.miscTab.Text = "Buttons and LEDs";
             this.miscTab.UseVisualStyleBackColor = true;
             // 
+            // groupBox16
+            // 
+            this.groupBox16.Controls.Add(this.groupBox21);
+            this.groupBox16.Controls.Add(this.groupBox20);
+            this.groupBox16.Controls.Add(this.groupBox19);
+            this.groupBox16.Controls.Add(this.groupBox18);
+            this.groupBox16.Location = new System.Drawing.Point(35, 239);
+            this.groupBox16.Name = "groupBox16";
+            this.groupBox16.Size = new System.Drawing.Size(254, 100);
+            this.groupBox16.TabIndex = 2;
+            this.groupBox16.TabStop = false;
+            this.groupBox16.Text = "Switches";
+            // 
+            // groupBox21
+            // 
+            this.groupBox21.Controls.Add(this.textBoxSwitch3);
+            this.groupBox21.Location = new System.Drawing.Point(189, 19);
+            this.groupBox21.Name = "groupBox21";
+            this.groupBox21.Size = new System.Drawing.Size(55, 51);
+            this.groupBox21.TabIndex = 7;
+            this.groupBox21.TabStop = false;
+            this.groupBox21.Text = "3";
+            // 
+            // textBoxSwitch3
+            // 
+            this.textBoxSwitch3.Enabled = false;
+            this.textBoxSwitch3.Location = new System.Drawing.Point(6, 19);
+            this.textBoxSwitch3.Name = "textBoxSwitch3";
+            this.textBoxSwitch3.Size = new System.Drawing.Size(37, 20);
+            this.textBoxSwitch3.TabIndex = 10;
+            // 
+            // groupBox20
+            // 
+            this.groupBox20.Controls.Add(this.textBoxSwitch2);
+            this.groupBox20.Location = new System.Drawing.Point(128, 19);
+            this.groupBox20.Name = "groupBox20";
+            this.groupBox20.Size = new System.Drawing.Size(55, 51);
+            this.groupBox20.TabIndex = 6;
+            this.groupBox20.TabStop = false;
+            this.groupBox20.Text = "2";
+            // 
+            // textBoxSwitch2
+            // 
+            this.textBoxSwitch2.Enabled = false;
+            this.textBoxSwitch2.Location = new System.Drawing.Point(6, 19);
+            this.textBoxSwitch2.Name = "textBoxSwitch2";
+            this.textBoxSwitch2.Size = new System.Drawing.Size(37, 20);
+            this.textBoxSwitch2.TabIndex = 10;
+            // 
+            // groupBox19
+            // 
+            this.groupBox19.Controls.Add(this.textBoxSwitch1);
+            this.groupBox19.Location = new System.Drawing.Point(67, 19);
+            this.groupBox19.Name = "groupBox19";
+            this.groupBox19.Size = new System.Drawing.Size(55, 51);
+            this.groupBox19.TabIndex = 5;
+            this.groupBox19.TabStop = false;
+            this.groupBox19.Text = "1";
+            // 
+            // textBoxSwitch1
+            // 
+            this.textBoxSwitch1.Enabled = false;
+            this.textBoxSwitch1.Location = new System.Drawing.Point(6, 19);
+            this.textBoxSwitch1.Name = "textBoxSwitch1";
+            this.textBoxSwitch1.Size = new System.Drawing.Size(37, 20);
+            this.textBoxSwitch1.TabIndex = 10;
+            // 
+            // groupBox18
+            // 
+            this.groupBox18.Controls.Add(this.textBoxSwitch0);
+            this.groupBox18.Location = new System.Drawing.Point(6, 19);
+            this.groupBox18.Name = "groupBox18";
+            this.groupBox18.Size = new System.Drawing.Size(55, 51);
+            this.groupBox18.TabIndex = 4;
+            this.groupBox18.TabStop = false;
+            this.groupBox18.Text = "0";
+            // 
+            // textBoxSwitch0
+            // 
+            this.textBoxSwitch0.Enabled = false;
+            this.textBoxSwitch0.Location = new System.Drawing.Point(6, 19);
+            this.textBoxSwitch0.Name = "textBoxSwitch0";
+            this.textBoxSwitch0.Size = new System.Drawing.Size(37, 20);
+            this.textBoxSwitch0.TabIndex = 10;
+            // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.groupBox17);
@@ -1092,91 +1177,6 @@
             this.checkBoxLed0.UseVisualStyleBackColor = true;
             this.checkBoxLed0.CheckedChanged += new System.EventHandler(this.checkBoxLed0_CheckedChanged);
             // 
-            // groupBox16
-            // 
-            this.groupBox16.Controls.Add(this.groupBox21);
-            this.groupBox16.Controls.Add(this.groupBox20);
-            this.groupBox16.Controls.Add(this.groupBox19);
-            this.groupBox16.Controls.Add(this.groupBox18);
-            this.groupBox16.Location = new System.Drawing.Point(35, 239);
-            this.groupBox16.Name = "groupBox16";
-            this.groupBox16.Size = new System.Drawing.Size(254, 100);
-            this.groupBox16.TabIndex = 2;
-            this.groupBox16.TabStop = false;
-            this.groupBox16.Text = "Switches";
-            // 
-            // groupBox18
-            // 
-            this.groupBox18.Controls.Add(this.textBoxSwitch0);
-            this.groupBox18.Location = new System.Drawing.Point(6, 19);
-            this.groupBox18.Name = "groupBox18";
-            this.groupBox18.Size = new System.Drawing.Size(55, 51);
-            this.groupBox18.TabIndex = 4;
-            this.groupBox18.TabStop = false;
-            this.groupBox18.Text = "0";
-            // 
-            // textBoxSwitch0
-            // 
-            this.textBoxSwitch0.Enabled = false;
-            this.textBoxSwitch0.Location = new System.Drawing.Point(6, 19);
-            this.textBoxSwitch0.Name = "textBoxSwitch0";
-            this.textBoxSwitch0.Size = new System.Drawing.Size(37, 20);
-            this.textBoxSwitch0.TabIndex = 10;
-            // 
-            // groupBox19
-            // 
-            this.groupBox19.Controls.Add(this.textBoxSwitch1);
-            this.groupBox19.Location = new System.Drawing.Point(67, 19);
-            this.groupBox19.Name = "groupBox19";
-            this.groupBox19.Size = new System.Drawing.Size(55, 51);
-            this.groupBox19.TabIndex = 5;
-            this.groupBox19.TabStop = false;
-            this.groupBox19.Text = "1";
-            // 
-            // textBoxSwitch1
-            // 
-            this.textBoxSwitch1.Enabled = false;
-            this.textBoxSwitch1.Location = new System.Drawing.Point(6, 19);
-            this.textBoxSwitch1.Name = "textBoxSwitch1";
-            this.textBoxSwitch1.Size = new System.Drawing.Size(37, 20);
-            this.textBoxSwitch1.TabIndex = 10;
-            // 
-            // groupBox20
-            // 
-            this.groupBox20.Controls.Add(this.textBoxSwitch2);
-            this.groupBox20.Location = new System.Drawing.Point(128, 19);
-            this.groupBox20.Name = "groupBox20";
-            this.groupBox20.Size = new System.Drawing.Size(55, 51);
-            this.groupBox20.TabIndex = 6;
-            this.groupBox20.TabStop = false;
-            this.groupBox20.Text = "2";
-            // 
-            // textBoxSwitch2
-            // 
-            this.textBoxSwitch2.Enabled = false;
-            this.textBoxSwitch2.Location = new System.Drawing.Point(6, 19);
-            this.textBoxSwitch2.Name = "textBoxSwitch2";
-            this.textBoxSwitch2.Size = new System.Drawing.Size(37, 20);
-            this.textBoxSwitch2.TabIndex = 10;
-            // 
-            // groupBox21
-            // 
-            this.groupBox21.Controls.Add(this.textBoxSwitch3);
-            this.groupBox21.Location = new System.Drawing.Point(189, 19);
-            this.groupBox21.Name = "groupBox21";
-            this.groupBox21.Size = new System.Drawing.Size(55, 51);
-            this.groupBox21.TabIndex = 7;
-            this.groupBox21.TabStop = false;
-            this.groupBox21.Text = "3";
-            // 
-            // textBoxSwitch3
-            // 
-            this.textBoxSwitch3.Enabled = false;
-            this.textBoxSwitch3.Location = new System.Drawing.Point(6, 19);
-            this.textBoxSwitch3.Name = "textBoxSwitch3";
-            this.textBoxSwitch3.Size = new System.Drawing.Size(37, 20);
-            this.textBoxSwitch3.TabIndex = 10;
-            // 
             // CTEC3426
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1205,6 +1205,15 @@
             this.smsTab.ResumeLayout(false);
             this.smsTab.PerformLayout();
             this.miscTab.ResumeLayout(false);
+            this.groupBox16.ResumeLayout(false);
+            this.groupBox21.ResumeLayout(false);
+            this.groupBox21.PerformLayout();
+            this.groupBox20.ResumeLayout(false);
+            this.groupBox20.PerformLayout();
+            this.groupBox19.ResumeLayout(false);
+            this.groupBox19.PerformLayout();
+            this.groupBox18.ResumeLayout(false);
+            this.groupBox18.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox17.ResumeLayout(false);
             this.groupBox17.PerformLayout();
@@ -1232,15 +1241,6 @@
             this.groupBox6.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            this.groupBox16.ResumeLayout(false);
-            this.groupBox18.ResumeLayout(false);
-            this.groupBox18.PerformLayout();
-            this.groupBox19.ResumeLayout(false);
-            this.groupBox19.PerformLayout();
-            this.groupBox20.ResumeLayout(false);
-            this.groupBox20.PerformLayout();
-            this.groupBox21.ResumeLayout(false);
-            this.groupBox21.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -62,23 +62,27 @@ namespace CTEC3426_2015
 
         public void updateRemoteBoardState(String[] data)
         {
-            // read the tempearature (note that I am counting bytes from 0)
-            int byte2 = int.Parse(data[2], System.Globalization.NumberStyles.HexNumber);
-            int byte3 = int.Parse(data[3], System.Globalization.NumberStyles.HexNumber);
-            remoteBoardState.temparature = byte2 + "." + byte3;
+            // last entry in data[] is an esc char
+            byte[] bytes = new byte[data.Length - 1];
+            for (int i = 0; i < bytes.Length; i++)
+            {
+                bytes[i] = byte.Parse(data[i], System.Globalization.NumberStyles.HexNumber); 
+            }
+
+            // read the temperature
+            remoteBoardState.temparature = bytes[2] + "." + bytes[3];
 
             // read the heater status
             // we need the fourth bit of the zeroth byte
-            byte byte0 = byte.Parse(data[0], System.Globalization.NumberStyles.HexNumber);
             int heaterBitNumber = 4;
-            remoteBoardState.isHeaterOn = (byte0 & (1 << heaterBitNumber)) != 0;
+            remoteBoardState.isHeaterOn = (bytes[0] & (1 << heaterBitNumber)) != 0;
 
             // read the fan status
             // note that the fan status is stored differently for incoming / outgoing
             int motorForwardBitNumber = 5;
-            Boolean isMotorOnForward = (byte0 & (1 << motorForwardBitNumber)) != 0;
+            Boolean isMotorOnForward = (bytes[0] & (1 << motorForwardBitNumber)) != 0;
             int motorBackwardBitNumber = 6;
-            Boolean isMotorOnBackward = (byte0 & (1 << motorBackwardBitNumber)) != 0;
+            Boolean isMotorOnBackward = (bytes[0] & (1 << motorBackwardBitNumber)) != 0;
             remoteBoardState.isFanOn = isMotorOnForward || isMotorOnBackward;
             if (isMotorOnForward)
             {
@@ -91,31 +95,29 @@ namespace CTEC3426_2015
 
             // read the status of the LED's
             // bits 0 -> 3 of byte 5.
-            byte byte4 = byte.Parse(data[4], System.Globalization.NumberStyles.HexNumber);
-            for (int ledNumber = 0; ledNumber < 4; ledNumber++)
+            for (int ledNumber = 0; ledNumber < remoteBoardState.ledArray.Length; ledNumber++)
             {
-                Boolean isLedOn = (byte4 & (1 << ledNumber)) != 0;
+                Boolean isLedOn = (bytes[4] & (1 << ledNumber)) != 0;
                 remoteBoardState.ledArray[ledNumber] = isLedOn;
             }
 
             // read the status of the keypad from byte 1
-            byte byte1 = byte.Parse(data[1], System.Globalization.NumberStyles.HexNumber);
             // characters 0 -> 9 are encoded as ascii
             int character = Convert.ToByte('0');
             for (int i = 0; i < 10; i++)
             {
-                remoteBoardState.keypad[i] = (character + i) == byte1;
+                remoteBoardState.keypad[i] = (character + i) == bytes[1];
             }
             // * button
-            remoteBoardState.keypad[10] = byte1 == 0x53;
+            remoteBoardState.keypad[10] = bytes[1] == 0x53;
             // # button
-            remoteBoardState.keypad[11] = byte1 == 0x48;
+            remoteBoardState.keypad[11] = bytes[1] == 0x48;
 
             // read the status of the switches
             // bits 0->3 of byte 0
             for (int switchNumber = 0; switchNumber < remoteBoardState.switches.Length; switchNumber++)
             {
-                remoteBoardState.switches[switchNumber] = (byte0 & (1 << switchNumber)) != 0;
+                remoteBoardState.switches[switchNumber] = (bytes[0] & (1 << switchNumber)) != 0;
             }
         }
 
@@ -181,6 +183,7 @@ namespace CTEC3426_2015
             {
                 // actual temperature is higher than desired
                 desiredState.isFanOn = true;
+                desiredState.motorDirection = BoardState.MotorDirection.FORWARD;
                 desiredState.isHeaterOn = false;
             } else
             {
