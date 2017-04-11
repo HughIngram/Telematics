@@ -34,7 +34,9 @@ namespace CTEC3426_2015
         public MotorDirection motorDirection = MotorDirection.FORWARD;
         public Boolean isHeaterOn = false;
         public String temparature = "";
-        public Boolean[] ledArray = { false, false, false, false };
+        public Boolean[] ledArray = new Boolean[4];
+        // order of items: 0123456789*#
+        public Boolean[] keypad = new Boolean[12];
     }
 
     /**
@@ -92,6 +94,19 @@ namespace CTEC3426_2015
                 Boolean isLedOn = (byte4 & (1 << ledNumber)) != 0;
                 remoteBoardState.ledArray[ledNumber] = isLedOn;
             }
+
+            // read the status of the keypad from byte 1
+            byte byte1 = byte.Parse(data[1], System.Globalization.NumberStyles.HexNumber);
+            // characters 0 -> 9 are encoded as ascii
+            int character = Convert.ToByte('0');
+            for (int i = 0; i < 10; i++)
+            {
+                remoteBoardState.keypad[i] = (character + i) == byte1;
+            }
+            // * button
+            remoteBoardState.keypad[10] = byte1 == 0x53;
+            // # button
+            remoteBoardState.keypad[11] = byte1 == 0x48;
         }
 
         public void setUpMask(String mask)

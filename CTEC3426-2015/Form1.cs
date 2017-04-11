@@ -269,6 +269,33 @@ namespace CTEC3426_2015
             textBoxLed1Status.AppendText(getOnOrOff(remoteBoardState.ledArray[1]));
             textBoxLed2Status.AppendText(getOnOrOff(remoteBoardState.ledArray[2]));
             textBoxLed3Status.AppendText(getOnOrOff(remoteBoardState.ledArray[3]));
+
+            // keypad status
+            textBoxKeypad0.Clear();
+            textBoxKeypad1.Clear();
+            textBoxKeypad2.Clear();
+            textBoxKeypad3.Clear();
+            textBoxKeypad4.Clear();
+            textBoxKeypad5.Clear();
+            textBoxKeypad6.Clear();
+            textBoxKeypad6.Clear();
+            textBoxKeypad7.Clear();
+            textBoxKeypad8.Clear();
+            textBoxKeypad9.Clear();
+            textBoxKeypadStar.Clear();
+            textBoxKeypadHash.Clear();
+            textBoxKeypad0.AppendText(getOnOrOff(remoteBoardState.keypad[0]));
+            textBoxKeypad1.AppendText(getOnOrOff(remoteBoardState.keypad[1]));
+            textBoxKeypad2.AppendText(getOnOrOff(remoteBoardState.keypad[2]));
+            textBoxKeypad3.AppendText(getOnOrOff(remoteBoardState.keypad[3]));
+            textBoxKeypad4.AppendText(getOnOrOff(remoteBoardState.keypad[4]));
+            textBoxKeypad5.AppendText(getOnOrOff(remoteBoardState.keypad[5]));
+            textBoxKeypad6.AppendText(getOnOrOff(remoteBoardState.keypad[6]));
+            textBoxKeypad7.AppendText(getOnOrOff(remoteBoardState.keypad[7]));
+            textBoxKeypad8.AppendText(getOnOrOff(remoteBoardState.keypad[8]));
+            textBoxKeypad9.AppendText(getOnOrOff(remoteBoardState.keypad[9]));
+            textBoxKeypadStar.AppendText(getOnOrOff(remoteBoardState.keypad[10]));
+            textBoxKeypadHash.AppendText(getOnOrOff(remoteBoardState.keypad[11]));
         }
 
         private String getOnOrOff(Boolean b)
