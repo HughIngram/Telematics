@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace CTEC3426_2015
 {
+    // TODO move into another file
     public class BoardState
     {
+        public enum MotorDirection
+        {
+            FORWARD, REVERSE
+        }
+
         private static int N_LEDS = 4;
         private static int N_KP_BUTTONS = 12;
         private static int N_SWITCHES = 4;
@@ -27,9 +33,75 @@ namespace CTEC3426_2015
             Array.Copy(previousState.switches, switches, N_SWITCHES);
         }
 
-        public enum MotorDirection
+        override
+        public String ToString()
         {
-            FORWARD, REVERSE
+            return "(\"temp\":\"" + temparature + "\""
+                + ",\"heater\":\"" + getOnOrOff(isHeaterOn) + "\""
+                + ",\"motor\":\"" + motorToString() + "\""
+                + ",\"leds\":<"
+                    + "\"" + getOnOrOff(ledArray[0]) + "\""
+                    + ",\"" + getOnOrOff(ledArray[1]) + "\""
+                    + ",\"" + getOnOrOff(ledArray[2]) + "\""
+                    + ",\"" + getOnOrOff(ledArray[3]) + "\">"
+                + ",\"switches\":<"
+                    + ",\"" + getOnOrOff(switches[0]) + "\""
+                    + ",\"" + getOnOrOff(switches[1]) + "\""
+                    + ",\"" + getOnOrOff(switches[2]) + "\""
+                    + ",\"" + getOnOrOff(switches[3]) + "\">"
+                + ",\"keypad\":\"" + getActiveKeypadButton() + "\""
+                + ")";
+        }
+
+        // TODO re-use this elsewhere
+        public static String getOnOrOff(Boolean b)
+        {
+            if (b)
+            {
+                return "ON";
+            } else
+            {
+                return "OFF";
+            }
+        }
+
+        // TODO re-use this in UI
+        public String motorToString()
+        {
+            if (isFanOn)
+            {
+                if (motorDirection == MotorDirection.FORWARD)
+                {
+                    return "FORWARD";
+                } else
+                {
+                    return "REVERSE";
+                }
+            } else
+            {
+                return "OFF";
+            }
+        }
+
+        private String getActiveKeypadButton()
+        {
+            // this implementation assumes only one button can be pressed at a time.
+            String button = "NULL";
+            for (int i = 0; i < 10; i++)
+            {
+                if (keypad[i])
+                {
+                    button = i.ToString();
+                }
+            }
+            if (keypad[10])
+            {
+                button = "*";
+            } else if (keypad[11])
+            {
+                button = "#";
+            }
+            return button;
         }
 
         public Boolean isFanOn = false;
@@ -209,9 +281,14 @@ namespace CTEC3426_2015
             sendAllCommands(desiredState);
         }
 
+        public String getStatusString()
+        {
+            return remoteBoardState.ToString();
+        }
+
         public void sendSms(String number, String message)
         {
-            // TODO implement this
+            form.sendCommand(form.serialPort, "$", number + "#" + message + "\n");
         }
 
         /**

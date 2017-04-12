@@ -42,7 +42,6 @@ namespace CTEC3426_2015
             reading = false;
             this.readThread.Abort();
             serialPort.Close();
-
         }
 
         /* Initialise the toolbar menu */
@@ -302,6 +301,14 @@ namespace CTEC3426_2015
             textBoxSwitch1.AppendText(getOnOrOff(remoteBoardState.switches[1]));
             textBoxSwitch2.AppendText(getOnOrOff(remoteBoardState.switches[2]));
             textBoxSwitch3.AppendText(getOnOrOff(remoteBoardState.switches[3]));
+
+            updateSmsString();
+        }
+
+        private void updateSmsString()
+        {
+            textboxSmsMessage.Clear();
+            textboxSmsMessage.AppendText(model.getStatusString());
         }
 
         private String getOnOrOff(Boolean b)

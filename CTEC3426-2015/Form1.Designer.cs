@@ -672,8 +672,8 @@
             this.tabControl.Controls.Add(this.terminalTab);
             this.tabControl.Controls.Add(this.controlsTab);
             this.tabControl.Controls.Add(this.tempTab);
-            this.tabControl.Controls.Add(this.smsTab);
             this.tabControl.Controls.Add(this.miscTab);
+            this.tabControl.Controls.Add(this.smsTab);
             this.tabControl.Location = new System.Drawing.Point(13, 28);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
@@ -707,30 +707,32 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(75, 119);
+            this.label13.Location = new System.Drawing.Point(72, 119);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(50, 13);
+            this.label13.Size = new System.Drawing.Size(53, 13);
             this.label13.TabIndex = 3;
-            this.label13.Text = "Message";
+            this.label13.Text = "Message:";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(84, 60);
+            this.label12.Location = new System.Drawing.Point(69, 63);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(44, 13);
+            this.label12.Size = new System.Drawing.Size(56, 13);
             this.label12.TabIndex = 2;
-            this.label12.Text = "Number";
+            this.label12.Text = "Number: +";
             // 
             // textboxSmsMessage
             // 
             this.textboxSmsMessage.AcceptsReturn = true;
+            this.textboxSmsMessage.Enabled = false;
             this.textboxSmsMessage.Location = new System.Drawing.Point(131, 119);
             this.textboxSmsMessage.MaxLength = 160;
             this.textboxSmsMessage.Multiline = true;
             this.textboxSmsMessage.Name = "textboxSmsMessage";
             this.textboxSmsMessage.Size = new System.Drawing.Size(242, 130);
             this.textboxSmsMessage.TabIndex = 1;
+            this.textboxSmsMessage.Text = "test message";
             // 
             // textboxSmsNumber
             // 
