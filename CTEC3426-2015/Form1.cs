@@ -235,20 +235,7 @@ namespace CTEC3426_2015
 
             // fan (motor)
             textBoxFanStatus.ResetText();
-            if (remoteBoardState.isFanOn)
-            {
-                if (remoteBoardState.motorDirection == BoardState.MotorDirection.FORWARD)
-                {
-                    textBoxFanStatus.AppendText("FORWARD");
-                } else
-                {
-                    textBoxFanStatus.AppendText("REVERSE");
-                }
-            }
-            else
-            {
-                textBoxFanStatus.AppendText("OFF");
-            }
+            textBoxFanStatus.AppendText(remoteBoardState.motorToString());
 
             // temperature
             textBoxTempDisplay.ResetText();
@@ -291,7 +278,6 @@ namespace CTEC3426_2015
             textBoxKeypadStar.AppendText(getOnOrOff(remoteBoardState.keypad[10]));
             textBoxKeypadHash.AppendText(getOnOrOff(remoteBoardState.keypad[11]));
 
-
             // switches
             textBoxSwitch0.Clear();
             textBoxSwitch1.Clear();
@@ -313,13 +299,7 @@ namespace CTEC3426_2015
 
         private String getOnOrOff(Boolean b)
         {
-            if (b)
-            {
-                return "ON";
-            } else
-            {
-                return "OFF";
-            }
+            return BoardState.getOnOrOff(b);
         }
 
         // Writes a command with some optional data to the serial port
