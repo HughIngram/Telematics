@@ -80,12 +80,6 @@
             this.terminalTab = new System.Windows.Forms.TabPage();
             this.terminal = new System.Windows.Forms.RichTextBox();
             this.tabControl = new System.Windows.Forms.TabControl();
-            this.smsTab = new System.Windows.Forms.TabPage();
-            this.buttonSendSms = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textboxSmsMessage = new System.Windows.Forms.TextBox();
-            this.textboxSmsNumber = new System.Windows.Forms.TextBox();
             this.miscTab = new System.Windows.Forms.TabPage();
             this.groupBox16 = new System.Windows.Forms.GroupBox();
             this.groupBox21 = new System.Windows.Forms.GroupBox();
@@ -131,6 +125,12 @@
             this.checkBoxLed2 = new System.Windows.Forms.CheckBox();
             this.checkBoxLed1 = new System.Windows.Forms.CheckBox();
             this.checkBoxLed0 = new System.Windows.Forms.CheckBox();
+            this.smsTab = new System.Windows.Forms.TabPage();
+            this.buttonSendSms = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textboxSmsMessage = new System.Windows.Forms.TextBox();
+            this.textboxSmsNumber = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.tempTab.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -139,7 +139,6 @@
             this.controlsTab.SuspendLayout();
             this.terminalTab.SuspendLayout();
             this.tabControl.SuspendLayout();
-            this.smsTab.SuspendLayout();
             this.miscTab.SuspendLayout();
             this.groupBox16.SuspendLayout();
             this.groupBox21.SuspendLayout();
@@ -160,6 +159,7 @@
             this.groupBox8.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.smsTab.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -436,9 +436,9 @@
             this.groupBox1.Controls.Add(this.textBoxTempDisplay);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(150, 390);
+            this.groupBox1.Location = new System.Drawing.Point(105, 323);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(341, 168);
+            this.groupBox1.Size = new System.Drawing.Size(422, 168);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Status";
@@ -446,7 +446,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(218, 121);
+            this.label10.Location = new System.Drawing.Point(249, 121);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(17, 13);
             this.label10.TabIndex = 24;
@@ -455,7 +455,7 @@
             // textBoxFanStatus
             // 
             this.textBoxFanStatus.Enabled = false;
-            this.textBoxFanStatus.Location = new System.Drawing.Point(166, 42);
+            this.textBoxFanStatus.Location = new System.Drawing.Point(197, 42);
             this.textBoxFanStatus.Name = "textBoxFanStatus";
             this.textBoxFanStatus.ReadOnly = true;
             this.textBoxFanStatus.Size = new System.Drawing.Size(71, 20);
@@ -464,7 +464,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(99, 49);
+            this.label7.Location = new System.Drawing.Point(130, 49);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(61, 13);
             this.label7.TabIndex = 22;
@@ -473,7 +473,7 @@
             // textBoxHeaterStatus
             // 
             this.textBoxHeaterStatus.Enabled = false;
-            this.textBoxHeaterStatus.Location = new System.Drawing.Point(167, 77);
+            this.textBoxHeaterStatus.Location = new System.Drawing.Point(198, 77);
             this.textBoxHeaterStatus.Name = "textBoxHeaterStatus";
             this.textBoxHeaterStatus.ReadOnly = true;
             this.textBoxHeaterStatus.Size = new System.Drawing.Size(45, 20);
@@ -482,7 +482,7 @@
             // textBoxTempDisplay
             // 
             this.textBoxTempDisplay.Enabled = false;
-            this.textBoxTempDisplay.Location = new System.Drawing.Point(167, 114);
+            this.textBoxTempDisplay.Location = new System.Drawing.Point(198, 114);
             this.textBoxTempDisplay.Name = "textBoxTempDisplay";
             this.textBoxTempDisplay.ReadOnly = true;
             this.textBoxTempDisplay.Size = new System.Drawing.Size(45, 20);
@@ -491,7 +491,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(86, 80);
+            this.label6.Location = new System.Drawing.Point(117, 80);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(75, 13);
             this.label6.TabIndex = 17;
@@ -500,7 +500,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(91, 117);
+            this.label3.Location = new System.Drawing.Point(122, 117);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 13);
             this.label3.TabIndex = 14;
@@ -538,7 +538,7 @@
             // 
             // buttonApplyMask
             // 
-            this.buttonApplyMask.Location = new System.Drawing.Point(144, 187);
+            this.buttonApplyMask.Location = new System.Drawing.Point(138, 126);
             this.buttonApplyMask.Name = "buttonApplyMask";
             this.buttonApplyMask.Size = new System.Drawing.Size(75, 23);
             this.buttonApplyMask.TabIndex = 12;
@@ -548,7 +548,7 @@
             // 
             // textBoxMask
             // 
-            this.textBoxMask.Location = new System.Drawing.Point(27, 190);
+            this.textBoxMask.Location = new System.Drawing.Point(21, 129);
             this.textBoxMask.MaxLength = 8;
             this.textBoxMask.Name = "textBoxMask";
             this.textBoxMask.Size = new System.Drawing.Size(111, 20);
@@ -558,7 +558,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(24, 173);
+            this.label21.Location = new System.Drawing.Point(18, 112);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(39, 13);
             this.label21.TabIndex = 10;
@@ -566,12 +566,12 @@
             // 
             // textBoxOutgoingId
             // 
-            this.textBoxOutgoingId.Location = new System.Drawing.Point(24, 120);
+            this.textBoxOutgoingId.Location = new System.Drawing.Point(21, 228);
             this.textBoxOutgoingId.MaxLength = 8;
             this.textBoxOutgoingId.Name = "textBoxOutgoingId";
             this.textBoxOutgoingId.Size = new System.Drawing.Size(114, 20);
             this.textBoxOutgoingId.TabIndex = 8;
-            this.textBoxOutgoingId.Text = "BEEFDEAD";
+            this.textBoxOutgoingId.Text = "1EEFDEAD";
             // 
             // textBoxReading
             // 
@@ -589,11 +589,11 @@
             this.textBoxIncomingId.Name = "textBoxIncomingId";
             this.textBoxIncomingId.Size = new System.Drawing.Size(117, 20);
             this.textBoxIncomingId.TabIndex = 0;
-            this.textBoxIncomingId.Text = "DEADBEEF";
+            this.textBoxIncomingId.Text = "1DEADBEE";
             // 
             // buttonOutgoingIdAccept
             // 
-            this.buttonOutgoingIdAccept.Location = new System.Drawing.Point(144, 116);
+            this.buttonOutgoingIdAccept.Location = new System.Drawing.Point(141, 224);
             this.buttonOutgoingIdAccept.Name = "buttonOutgoingIdAccept";
             this.buttonOutgoingIdAccept.Size = new System.Drawing.Size(75, 23);
             this.buttonOutgoingIdAccept.TabIndex = 9;
@@ -604,7 +604,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(21, 103);
+            this.label4.Location = new System.Drawing.Point(18, 211);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(175, 13);
             this.label4.TabIndex = 7;
@@ -679,68 +679,6 @@
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(619, 661);
             this.tabControl.TabIndex = 1;
-            // 
-            // smsTab
-            // 
-            this.smsTab.Controls.Add(this.buttonSendSms);
-            this.smsTab.Controls.Add(this.label13);
-            this.smsTab.Controls.Add(this.label12);
-            this.smsTab.Controls.Add(this.textboxSmsMessage);
-            this.smsTab.Controls.Add(this.textboxSmsNumber);
-            this.smsTab.Location = new System.Drawing.Point(4, 22);
-            this.smsTab.Name = "smsTab";
-            this.smsTab.Size = new System.Drawing.Size(611, 635);
-            this.smsTab.TabIndex = 3;
-            this.smsTab.Text = "SMS";
-            this.smsTab.UseVisualStyleBackColor = true;
-            // 
-            // buttonSendSms
-            // 
-            this.buttonSendSms.Location = new System.Drawing.Point(298, 255);
-            this.buttonSendSms.Name = "buttonSendSms";
-            this.buttonSendSms.Size = new System.Drawing.Size(75, 23);
-            this.buttonSendSms.TabIndex = 4;
-            this.buttonSendSms.Text = "Send";
-            this.buttonSendSms.UseVisualStyleBackColor = true;
-            this.buttonSendSms.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(72, 119);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(53, 13);
-            this.label13.TabIndex = 3;
-            this.label13.Text = "Message:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(69, 63);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(56, 13);
-            this.label12.TabIndex = 2;
-            this.label12.Text = "Number: +";
-            // 
-            // textboxSmsMessage
-            // 
-            this.textboxSmsMessage.AcceptsReturn = true;
-            this.textboxSmsMessage.Enabled = false;
-            this.textboxSmsMessage.Location = new System.Drawing.Point(131, 119);
-            this.textboxSmsMessage.MaxLength = 160;
-            this.textboxSmsMessage.Multiline = true;
-            this.textboxSmsMessage.Name = "textboxSmsMessage";
-            this.textboxSmsMessage.Size = new System.Drawing.Size(242, 130);
-            this.textboxSmsMessage.TabIndex = 1;
-            this.textboxSmsMessage.Text = "test message";
-            // 
-            // textboxSmsNumber
-            // 
-            this.textboxSmsNumber.Location = new System.Drawing.Point(131, 60);
-            this.textboxSmsNumber.MaxLength = 12;
-            this.textboxSmsNumber.Name = "textboxSmsNumber";
-            this.textboxSmsNumber.Size = new System.Drawing.Size(100, 20);
-            this.textboxSmsNumber.TabIndex = 0;
             // 
             // miscTab
             // 
@@ -1179,6 +1117,68 @@
             this.checkBoxLed0.UseVisualStyleBackColor = true;
             this.checkBoxLed0.CheckedChanged += new System.EventHandler(this.checkBoxLed0_CheckedChanged);
             // 
+            // smsTab
+            // 
+            this.smsTab.Controls.Add(this.buttonSendSms);
+            this.smsTab.Controls.Add(this.label13);
+            this.smsTab.Controls.Add(this.label12);
+            this.smsTab.Controls.Add(this.textboxSmsMessage);
+            this.smsTab.Controls.Add(this.textboxSmsNumber);
+            this.smsTab.Location = new System.Drawing.Point(4, 22);
+            this.smsTab.Name = "smsTab";
+            this.smsTab.Size = new System.Drawing.Size(611, 635);
+            this.smsTab.TabIndex = 3;
+            this.smsTab.Text = "SMS";
+            this.smsTab.UseVisualStyleBackColor = true;
+            // 
+            // buttonSendSms
+            // 
+            this.buttonSendSms.Location = new System.Drawing.Point(298, 255);
+            this.buttonSendSms.Name = "buttonSendSms";
+            this.buttonSendSms.Size = new System.Drawing.Size(75, 23);
+            this.buttonSendSms.TabIndex = 4;
+            this.buttonSendSms.Text = "Send";
+            this.buttonSendSms.UseVisualStyleBackColor = true;
+            this.buttonSendSms.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(72, 119);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(53, 13);
+            this.label13.TabIndex = 3;
+            this.label13.Text = "Message:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(69, 63);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(56, 13);
+            this.label12.TabIndex = 2;
+            this.label12.Text = "Number: +";
+            // 
+            // textboxSmsMessage
+            // 
+            this.textboxSmsMessage.AcceptsReturn = true;
+            this.textboxSmsMessage.Enabled = false;
+            this.textboxSmsMessage.Location = new System.Drawing.Point(131, 119);
+            this.textboxSmsMessage.MaxLength = 160;
+            this.textboxSmsMessage.Multiline = true;
+            this.textboxSmsMessage.Name = "textboxSmsMessage";
+            this.textboxSmsMessage.Size = new System.Drawing.Size(242, 130);
+            this.textboxSmsMessage.TabIndex = 1;
+            this.textboxSmsMessage.Text = "test message";
+            // 
+            // textboxSmsNumber
+            // 
+            this.textboxSmsNumber.Location = new System.Drawing.Point(131, 60);
+            this.textboxSmsNumber.MaxLength = 12;
+            this.textboxSmsNumber.Name = "textboxSmsNumber";
+            this.textboxSmsNumber.Size = new System.Drawing.Size(100, 20);
+            this.textboxSmsNumber.TabIndex = 0;
+            // 
             // CTEC3426
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1204,8 +1204,6 @@
             this.controlsTab.PerformLayout();
             this.terminalTab.ResumeLayout(false);
             this.tabControl.ResumeLayout(false);
-            this.smsTab.ResumeLayout(false);
-            this.smsTab.PerformLayout();
             this.miscTab.ResumeLayout(false);
             this.groupBox16.ResumeLayout(false);
             this.groupBox21.ResumeLayout(false);
@@ -1243,6 +1241,8 @@
             this.groupBox6.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.smsTab.ResumeLayout(false);
+            this.smsTab.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

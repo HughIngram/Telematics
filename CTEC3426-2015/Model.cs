@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace CTEC3426_2015
 {
-
     /**
-        The business logic for the code.
+        The 'business' logic for the code.
         No UI code in here.
     **/
     class ApplicationModel
@@ -35,7 +34,7 @@ namespace CTEC3426_2015
             }
 
             // read the temperature
-            remoteBoardState.temparature = bytes[2] + "." + bytes[3];
+            remoteBoardState.temperature = bytes[2] + "." + bytes[3];
 
             // read the heater status
             // we need the fourth bit of the zeroth byte
@@ -139,12 +138,12 @@ namespace CTEC3426_2015
         {
 
             BoardState desiredState = new BoardState(remoteBoardState);
-            if (remoteBoardState.temparature.Equals(setPoint))
+            if (remoteBoardState.temperature.Equals(setPoint))
             {
                 // do nothing if the temperature is correct.
                 desiredState.isFanOn = false;
                 desiredState.isHeaterOn = false;
-            } else if (Double.Parse(remoteBoardState.temparature) > Double.Parse(setPoint))
+            } else if (Double.Parse(remoteBoardState.temperature) > Double.Parse(setPoint))
             {
                 // actual temperature is higher than desired
                 desiredState.isFanOn = true;

@@ -199,6 +199,8 @@ namespace CTEC3426_2015
                 delimStr = " ";
                 delimiter = delimStr.ToCharArray();
                 String[] data = dataStr.Split(delimiter);
+                // this context is a convenient hook for doing something on loop.
+                // code here will be called every time a new remote board status is available.
 
                 // update the incoming data display
                 textBoxReading.ResetText();
@@ -210,6 +212,7 @@ namespace CTEC3426_2015
                 // now update the GUI
                 displayRemoteBoardStatus(model.remoteBoardState);
 
+                // update the temperature set point
                 if (setPointRadioButton.Checked && !textBoxTempSetPoint.Text.Equals(""))
                 {              
                     String setPoint = textBoxTempSetPoint.Text;
@@ -218,10 +221,6 @@ namespace CTEC3426_2015
                     model.tempSetPoint(setPoint);
                 }
             }
-
-            // this context is a convenient hook for doing something on loop.
-            // TODO call to a method like model.main() (maybe from one context up in the stack?)
-            // from model.main() do the auto temperature control 
         }
 
         // updates the UI's representation of the remote board status.
@@ -239,7 +238,7 @@ namespace CTEC3426_2015
 
             // temperature
             textBoxTempDisplay.ResetText();
-            textBoxTempDisplay.AppendText(remoteBoardState.temparature);
+            textBoxTempDisplay.AppendText(remoteBoardState.temperature);
 
             // LED's
             textBoxLed0Status.Clear();

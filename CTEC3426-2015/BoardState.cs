@@ -20,7 +20,7 @@ namespace CTEC3426_2015
         public Boolean isFanOn = false;
         public MotorDirection motorDirection = MotorDirection.FORWARD;
         public Boolean isHeaterOn = false;
-        public String temparature = "";
+        public String temperature = "";
         public Boolean[] ledArray = new Boolean[N_LEDS];
         public Boolean[] keypad = new Boolean[N_KP_BUTTONS]; // order of items: 0123456789*#
         public Boolean[] switches = new Boolean[N_SWITCHES];
@@ -35,7 +35,7 @@ namespace CTEC3426_2015
             isFanOn = previousState.isFanOn;
             motorDirection = previousState.motorDirection;
             isHeaterOn = previousState.isHeaterOn;
-            temparature = previousState.temparature;
+            temperature = previousState.temperature;
             Array.Copy(previousState.ledArray, ledArray, N_LEDS);
             Array.Copy(previousState.keypad, keypad, N_KP_BUTTONS);
             Array.Copy(previousState.switches, switches, N_SWITCHES);
@@ -44,7 +44,7 @@ namespace CTEC3426_2015
         override
         public String ToString()
         {
-            return "(\"temp\":\"" + temparature + "\""
+            return "(\"temp\":\"" + temperature + "\""
                 + ",\"heater\":\"" + getOnOrOff(isHeaterOn) + "\""
                 + ",\"motor\":\"" + motorToString() + "\""
                 + ",\"leds\":<"
@@ -72,7 +72,6 @@ namespace CTEC3426_2015
             }
         }
 
-        // TODO re-use this in UI
         public String motorToString()
         {
             if (isFanOn)
